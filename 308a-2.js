@@ -71,12 +71,13 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 
 //Part 3 - Class Features
 class Adventurer extends Character {
-    constructor (name, role) {
+    constructor (name, role, alignment) {
       super(name);
       // Adventurers have specialized roles.
       this.role = role;
       // Every adventurer starts with a bed and 50 gold coins.
       this.inventory.push("bedroll", "50 gold coins");
+      this.alignment = alignment;
     }
     // Adventurers have the ability to scout ahead of them.
     scout () {
@@ -92,12 +93,42 @@ class Adventurer extends Character {
         super.roll();
     }
   }
-  let Keothi = new Adventurer('Keothi', 'Rogue');
+  let Keothi = new Adventurer('Keothi', 'Rogue', 'Lawful Neutral');
+  //change the declaration of Robin and the companions to use the new Adventurer and Companion classes.
+  let Robin = new Adventurer('Robin', 'Fighter', 'Chaotic Good');// figure out how to make it run with the proper inventory
 //   console.log(Keothi.investigate());
-Keothi.charm();
-Keothi.investigate();
+// Keothi.charm();
+// Keothi.investigate();
+Robin.scout();
+console.log(Robin);
+console.log('--------------')
 
   //create a Companion class with properties and methods specific to the companions.
 
-
-
+class Companions extends Character{
+    constructor(name, type){
+        super(name);
+        this.type = type;
+    }
+    investigate(){
+        console.log(`${this.name} is investigating...`);
+        super.roll();
+    }
+    stealth(){
+        console.log(`${this.name} is trying to be stealthy...`);
+        super.roll();
+    }
+}
+let Fluffy = new Companions('Fluffy', 'void dog');
+let Beastie = new Companions('Beastie','raven')
+  //change the declaration of Robin and the companions to use the new Adventurer and Companion classes.
+let Leo = new Companions('Leo', 'cat')
+let Frank = new Companions('Frank', 'flea'); // figure out how to make it run with the proper inventory
+// console.log(Fluffy);
+// console.log(Beastie);
+// Fluffy.stealth();
+// Beastie.investigate();
+// console.log(Companions); /doesn't work
+Leo.investigate();
+Frank.stealth();
+console.log(Frank);
