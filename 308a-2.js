@@ -25,24 +25,24 @@
 //The companion’s type is “Flea.”
 //The companion has its own belongings, which includes a small hat and sunglasses.
 
-const adventurer = {
-    name: "Robin",
-    health: 10,
-    inventory: ["sword", "potion", "artifact"],
-    companion: {
-        name: "Leo",
-        type: "Cat",
-        companion: {
-            name: "Frank",
-            type: "Flea",
-            inventory: "a small hat and sunglasses",
-        }
-    },//adding method for dice rolls
-    roll (mod = 0) {
-        const result = Math.floor(Math.random() * 20) + 1 + mod;
-        console.log(`${this.name} rolled a ${result}.`);
-        }
-};
+// const adventurer = {
+//     name: "Robin",
+//     health: 10,
+//     inventory: ["sword", "potion", "artifact"],
+//     companion: {
+//         name: "Leo",
+//         type: "Cat",
+//         companion: {
+//             name: "Frank",
+//             type: "Flea",
+//             inventory: "a small hat and sunglasses",
+//         }
+//     },//adding method for dice rolls
+//     roll (mod = 0) {
+//         const result = Math.floor(Math.random() * 20) + 1 + mod;
+//         console.log(`${this.name} rolled a ${result}.`);
+//         }
+// };
 // adventurer.roll();
 // console.log(adventurer);
 
@@ -52,7 +52,7 @@ class Character {
     constructor (name){
         this.name = name;
         this.health = 10;
-        this.inventory = ["sword", "potion", "artifact"]
+        this.inventory = []
     }
     roll (mod = 0) {
         const result = Math.floor(Math.random() * 20) + 1 + mod;
@@ -67,7 +67,7 @@ robin.companion.companion = new Character("Frank");
 robin.companion.companion.type = "Flea";
 robin.companion.companion.inventory = ["small hat", "sunglasses"];
 // console.log(robin.companion);
-robin.companion.roll();
+// robin.companion.roll();
 
 //Part 3 - Class Features
 class Adventurer extends Character {
@@ -83,4 +83,21 @@ class Adventurer extends Character {
       console.log(`${this.name} is scouting ahead...`);
       super.roll();
     }
+    investigate() {
+        console.log(`${this.name} is investigating...`);
+        super.roll();
+    }
+    charm () {
+        console.log(`${this.name} is putting on the charm...`);
+        super.roll();
+    }
   }
+  let Keothi = new Adventurer('Keothi', 'Rogue');
+//   console.log(Keothi.investigate());
+Keothi.charm();
+Keothi.investigate();
+
+  //create a Companion class with properties and methods specific to the companions.
+
+
+
