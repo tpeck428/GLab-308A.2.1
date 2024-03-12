@@ -146,13 +146,13 @@ Add a check to the constructor of the Adventurer class that ensures the given ro
 
 //Adventurer
 class Adventurer extends Character {
-    constructor (name, role, alignment) {
+    // static ROLES = ["Fighter", "Healer", "Wizard"]; -- doesn't work?
+    constructor (name, alignment) {
       super(name);
-      // Adventurers have specialized roles.
-      this.role = role;
       // Every adventurer starts with a bed and 50 gold coins.
       this.inventory.push("bedroll", "50 gold coins");
       this.alignment = alignment;
+    //   this.staticROLES = ROLES; // doesn't work?
     }
     // Adventurers have the ability to scout ahead of them.
     scout () {
@@ -168,12 +168,15 @@ class Adventurer extends Character {
         super.roll();
     }
     addItems(items){
-
     }
   }
   let Keothi = new Adventurer('Keothi', 'Rogue', 'Lawful Neutral');
-  let Robin = new Adventurer('Robin', 'Fighter', 'Chaotic Good')
-  console.log(Robin);
+  let Robin = new Adventurer('Robin', 'Monk', 'Chaotic Good')
+//   console.log(Robin);
+  Robin.addItems(['sword', 'potion', 'artifact']);
+//   console.log(Robin);
+Robin.charm();
+console.log('---------')
 
   //Companions
   class Companions extends Character{
@@ -188,6 +191,9 @@ class Adventurer extends Character {
     stealth(){
         console.log(`${this.name} is trying to be stealthy...`);
         super.roll();
+    }
+    addItems(items) {
+
     }
 }
 
