@@ -170,13 +170,13 @@ class Adventurer extends Character {
     addItems(items){
     }
   }
-  let Keothi = new Adventurer('Keothi', 'Rogue', 'Lawful Neutral');
-  let Robin = new Adventurer('Robin', 'Monk', 'Chaotic Good')
-//   console.log(Robin);
-  Robin.addItems(['sword', 'potion', 'artifact']);
-//   console.log(Robin);
-Robin.charm();
-console.log('---------')
+//   let Keothi = new Adventurer('Keothi', 'Rogue', 'Lawful Neutral');
+//   let Robin = new Adventurer('Robin', 'Monk', 'Chaotic Good')
+// //   console.log(Robin);
+//   Robin.addItems(['sword', 'potion', 'artifact']);
+// //   console.log(Robin);
+// Robin.charm();
+// console.log('---------')
 
   //Companions
   class Companions extends Character{
@@ -197,14 +197,17 @@ console.log('---------')
     }
 }
 
-let Fluffy = new Companions('Fluffy', 'void dog');
-let Beastie = new Companions('Beastie','raven')
+// let Fluffy = new Companions('Fluffy', 'void dog');
+// let Beastie = new Companions('Beastie','raven')
   //change the declaration of Robin and the companions to use the new Adventurer and Companion classes.
-let Leo = new Companions('Leo', 'cat')
-let Frank = new Companions('Frank', 'flea'); 
+// let Leo = new Companions('Leo', 'cat')
+// let Frank = new Companions('Frank', 'flea'); 
 
 
 //Note: How do we assign and call static properties and methods? 
 //properties cannot be called without the class, methods can be called individually as well
 //How do we assign and call individual inventories (for robin and frank the flea)?
 //add a method eg Robin.addNewItem() to add inventories
+
+//Part Six - Developing Skills
+
